@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  font-family: "Inter Tight", sans-serif;
+  letter-spacing: 1px;
+}
+
+:root {
+  --color-black-green: #111406;
+  --color-dark-green: #243010;
+  --color-dark-light-green: #445218;
+  --color-light-green: #87a330;
+  --color-extra-light-green: #c0cc9b;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  position: relative;
+}
+
+header nav ul {
+  display: none;
+}
+
+header nav ul.active {
+  display: block;
+  padding-top: 40px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: var(--color-black-green);
+  font-weight: 500;
+}
+
+header .burger-container {
+  display: block;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: 30px;
+  cursor: pointer;
+}
+
+header .burger-container span {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: rgb(153, 153, 153);
+  border-radius: 10px;
+  top: calc(50% / 2);
+}
+
+header .burger-container .burger:last-child {
+  margin-top: 15px;
+  transition: transform 0.4s, margin 0.4s, background 0.4s;
+}
+
+header .burger-container.active .burger {
+  transform: rotate(-45deg);
+  margin-top: 10px;
+}
+
+header .burger-container.active .burger:last-child {
+  transform: rotate(45deg);
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+
+  header nav ul {
+    display: block;
+  }
+
+  header .burger-container {
+    display: none;
+  }
+}
+
+/* Home */
+
+.home {
+  height: 400px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home h1 {
+  color: var(--color-dark-green);
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.home p {
+  color: var(--color-dark-light-green);
+  font-weight: 300;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    padding: 64px;
+  }
+
+  .home h1 {
+    font-size: 4rem;
+  }
+}
+
+/* Recipes */
+
+.recipes {
+  background-color: #c0cc9b;
+  padding: 64px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  border-radius: 32px 32px 0 0;
+}
+
+.recipes .texts h2 {
+  text-transform: uppercase;
+  color: var(--color-light-green);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.recipes .texts h3 {
+  color: var(--color-dark-green);
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.recipes .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.recipes .container .card {
+  width: 416px;
+  background-color: #f4f5f0;
+  border-radius: 16px;
+  border: 1px solid #e5d9c9;
+}
+
+.recipes .container .card img {
+  width: 100%;
+}
+
+.recipes .container .card .content {
+  padding: 25px;
+}
+
+.recipes .container .card .content .name {
+  color: var(--color-light-green);
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.recipes .container .card .content .texts {
+  margin-bottom: 50px;
+}
+
+.recipes .container .card .content .texts h4 {
+  color: var(--color-dark-green);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipes .container .card .content .texts p {
+  color: var(--color-dark-light-green);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+.recipes .container .card .content .tags {
+  display: flex;
+  gap: 10px;
+  color: var(--color-dark-light-green);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.recipes .container .card .content .tag {
+  background-color: var(--color-extra-light-green);
+  padding: 2px 10px;
+  border-radius: 50px;
+}
+
+@media screen and (min-width: 748px) {
+  .recipes {
+    padding: 84px 74px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .recipes .container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
